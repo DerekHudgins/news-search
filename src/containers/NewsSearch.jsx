@@ -4,7 +4,7 @@ import ArticlesList from '../components/articles/ArticlesList';
 
 export default class NewsSearch extends Component {
   state = {
-    loading: false,
+    loading: true,
     articles: [],
     search: '',
   };
