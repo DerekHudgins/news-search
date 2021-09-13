@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 export default class Search extends Component {
   render() {
+    const { handleSearch } = this.props;
     return (
       <form>
         <input
-          onChange={this.props.handleSearch}
+          onChange={handleSearch}
           placeholder="Search for articles..."
         />
       </form>

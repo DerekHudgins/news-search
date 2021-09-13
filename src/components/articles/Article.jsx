@@ -17,7 +17,7 @@ Article.propTypes = {
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default Article;

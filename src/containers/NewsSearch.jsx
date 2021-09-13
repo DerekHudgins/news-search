@@ -8,13 +8,13 @@ export default class NewsSearch extends Component {
   state = {
     loading: true,
     articles: [],
-    search: [],
+    search: '',
   };
 
   handleSearch = ({ target }) => {
     if(target.value) {
       return searchArticle(target.value).then(({ articles }) => {
-        this.setState({ articles });
+        this.setState({ articles, search: target.value });
       });
     }
   };
@@ -26,13 +26,16 @@ export default class NewsSearch extends Component {
   }
 
   render() {
-    const { articles, loading } = this.state;
+    const { articles, loading, search } = this.state;
     const { handleSearch } = this;
     return (
       <>
         <Header handleSearch={handleSearch} />
-
-        {loading ? <>Loading...</> : <ArticlesList articles={articles} />}
+        {loading ? (
+          <>Loading...</>
+        ) : (
+          <ArticlesList articles={articles} search={search} />
+        )}
       </>
     );
   }
