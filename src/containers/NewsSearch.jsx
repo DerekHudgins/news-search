@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import getArticles from '../services/getArticles';
 import ArticlesList from '../components/articles/ArticlesList';
 import Header from '../components/search/Search';
+import searchArticle from '../services/searchArticles';
 
 export default class NewsSearch extends Component {
   state = {
     loading: true,
     articles: [],
-    search: '',
+    search: [],
+  };
+
+  handleSearch = ({ target }) => {
+    if(target.value) {
+      return searchArticle(target.value).then(({ articles }) => {
+        this.setState({ articles });
+      });
+    }
   };
 
   componentDidMount() {
@@ -18,9 +27,10 @@ export default class NewsSearch extends Component {
 
   render() {
     const { articles, loading } = this.state;
+    const { handleSearch } = this;
     return (
       <>
-        <Header />
+        <Header handleSearch={handleSearch} />
 
         {loading ? <>Loading...</> : <ArticlesList articles={articles} />}
       </>

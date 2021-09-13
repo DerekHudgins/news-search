@@ -8,7 +8,7 @@ const Article = ({ url, title, author, description }) => {
         {title}
       </a>
       {author && <p>Written by: {author}</p>}
-      <p>Summary: {description}</p>
+      <p>{description}</p>
     </>
   );
 };

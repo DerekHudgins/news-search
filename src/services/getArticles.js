@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const NEWS_TOKEN = process.env.NEWS_TOKEN;
 const NEWS_API = `http://newsapi.org/v2/top-headlines?
 country=us&apiKey=${NEWS_TOKEN}`;
