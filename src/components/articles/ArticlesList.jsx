@@ -6,7 +6,7 @@ const ArticlesList = ({ articles }) => {
   const articlesList = articles.map((article, index) => {
     return (
       <li key={index}>
-        <Article {...article} />;
+        <Article {...article} />
       </li>
     );
   });
@@ -17,10 +17,10 @@ const ArticlesList = ({ articles }) => {
 ArticlesList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string,
+      title: PropTypes.string.isRequired,
       author: PropTypes.string,
-      description: PropTypes.string,
-    })
+      description: PropTypes.string.isRequired,
+    }).isRequired
   ),
 };
 

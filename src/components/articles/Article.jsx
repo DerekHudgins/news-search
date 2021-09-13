@@ -14,9 +14,10 @@ const Article = ({ url, title, author, description }) => {
 };
 
 Article.propTypes = {
-  title: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   author: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
 };
 
 export default Article;
