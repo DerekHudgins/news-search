@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 
 const API_URL_BASE = 'http://newsapi.org/v2/everything?';
-const API_SEARCH = 'q=';
-const API_CONSTRAINTS = '&from=2021-02-03&sortBy=popularity';
+const API_SEARCH = `q=`;
+const API_CONSTRAINTS = '&from=2021-09-13&sortBy=popularity';
 const NEWS_TOKEN = `&apiKey=${process.env.NEWS_TOKEN}`;
 
 const searchArticles = (query) => {
